@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Spamty Status\n"
-"POT-Creation-Date: 2016-07-10 14:54+0200\n"
-"PO-Revision-Date: 2016-07-10 15:00+0200\n"
+"POT-Creation-Date: 2016-07-10 15:06+0200\n"
+"PO-Revision-Date: 2016-07-10 15:06+0200\n"
 "Last-Translator: Philipp Rackevei\n"
 "Language-Team: Philipp Rackevei <https://3q3.de/spamty>\n"
 "Language: zh_CN\n"
@@ -19,7 +19,8 @@ msgid "Spamty Server Status"
 msgstr "Spamty 服务器状态"
 
 #: index.php:68 index.php:69 index.php:70 index.php:89
-msgid "See uptime and response times of the Spamty.eu website, API and the server."
+msgid ""
+"See uptime and response times of the Spamty.eu website, API and the server."
 msgstr "请参阅网站，应用程序编程接口和服务器正常运行时间和响应时间。"
 
 #: index.php:88
@@ -74,35 +75,65 @@ msgstr "毫秒"
 msgid "Average previous 12 hours"
 msgstr "平均之前12小时"
 
-#: index.php:160
+#: index.php:162
+msgid "Contact Me"
+msgstr "与我取得联系"
+
+#: index.php:164
+msgid ""
+"You can contact me if you have any questions or if there is a problem with "
+"the server."
+msgstr "如果您有任何问题或是否有与服务器的问题，您可以与我联系。"
+
+#: index.php:167
+msgid "Go to the contact form"
+msgstr "转到联系表格"
+
+#: index.php:170
+msgid "You can also:"
+msgstr "还可以"
+
+#: index.php:172
+msgid "Send us an email"
+msgstr "给我们发邮件"
+
+#: index.php:173
+msgid "Ask anything on ask.fm"
+msgstr "请教关于ask.fm什么"
+
+#: index.php:174
+msgid "Message us on Telegram"
+msgstr "留言我们 Telegram"
+
+#: index.php:181
 msgid "Blog"
 msgstr "博客 "
 
-#: index.php:161
+#: index.php:182
 msgid "Contact"
 msgstr "联络"
 
-#: index.php:162
+#: index.php:183
 msgid "FAQ/Help"
 msgstr "常见问题/帮助"
 
-#: index.php:163
+#: index.php:184
 msgid "Legal Notice"
 msgstr "法律声明"
 
-#: index.php:164
+#: index.php:185
 msgid "Privacy Policy"
 msgstr "隐私政策"
 
-#: index.php:165
+#: index.php:186
 msgid "Developer"
 msgstr "开发人员"
 
-#: index.php:170
+#: index.php:191
 msgid "Language:"
 msgstr "语言:"
 
-#: index.php:193
+#: index.php:214
 msgid "Powered by"
 msgstr "技术提供"
 
@@ -117,9 +148,6 @@ msgstr "技术提供"
 
 #~ msgid "The website in 2014"
 #~ msgstr "2014 年网站"
-
-#~ msgid "Contact Me"
-#~ msgstr "与我取得联系"
 
 #~ msgid "Developer contact"
 #~ msgstr "开发人员接触"
@@ -142,7 +170,8 @@ msgstr "技术提供"
 #~ msgid "Your Email Address"
 #~ msgstr "你的电子邮件地址"
 
-#~ msgid "Start here and encrypt your email address to protect it against spam."
+#~ msgid ""
+#~ "Start here and encrypt your email address to protect it against spam."
 #~ msgstr "从这里开始和加密您的电子邮件地址，以保护它免受垃圾邮件。"
 
 #~ msgid "Protect your Email Address"
@@ -160,10 +189,14 @@ msgstr "技术提供"
 #~ msgid "GET LINK"
 #~ msgstr "获取链接"
 
-#~ msgid "Create a Spamty link and protect your email address on the internet against spam."
+#~ msgid ""
+#~ "Create a Spamty link and protect your email address on the internet "
+#~ "against spam."
 #~ msgstr "创建 Spamty 的链接和保护你在互联网上对垃圾邮件的电子邮件地址。"
 
-#~ msgid "Please do not fill out the \"Name\" field. It is only for spam protection. "
+#~ msgid ""
+#~ "Please do not fill out the \"Name\" field. It is only for spam "
+#~ "protection. "
 #~ msgstr "请不要不填写“名称“字段。它只是垃圾邮件保护。"
 
 #~ msgid "This was no valid email address. "
@@ -172,11 +205,15 @@ msgstr "技术提供"
 #~ msgid "Sorry, we had technical problems."
 #~ msgstr "对不起，我们已遇到技术问题。"
 
-#~ msgid "Please send an email to contact@spamty.eu with the following error code. "
+#~ msgid ""
+#~ "Please send an email to contact@spamty.eu with the following error code. "
 #~ msgstr "请发送电子邮件到 contact@spamty.eu 与下面的错误代码。"
 
-#~ msgid "We will try to fix this problem and we can also create a new Spamty link for you manually."
-#~ msgstr "我们将会尝试修复此问题，我们手动也可以为你创建一个新的 Spamty 链接。"
+#~ msgid ""
+#~ "We will try to fix this problem and we can also create a new Spamty link "
+#~ "for you manually."
+#~ msgstr ""
+#~ "我们将会尝试修复此问题，我们手动也可以为你创建一个新的 Spamty 链接。"
 
 #~ msgid "This is the link where your email address can be found:"
 #~ msgstr "这是链接可以找到您的电子邮件地址 ︰"
@@ -211,8 +248,11 @@ msgstr "技术提供"
 #~ msgid "Frequently Asked Questions"
 #~ msgstr "Häufige Fragen"
 
-#~ msgid "How Spamty works, how you can protect your email against spam and more frequently asked questions."
-#~ msgstr "Spamty 如何，如何，您可以保护您免受垃圾邮件和更常问的问题的电子邮件。"
+#~ msgid ""
+#~ "How Spamty works, how you can protect your email against spam and more "
+#~ "frequently asked questions."
+#~ msgstr ""
+#~ "Spamty 如何，如何，您可以保护您免受垃圾邮件和更常问的问题的电子邮件。"
 
 #~ msgid "Frequently Asked Questions <small>and the answers</small>"
 #~ msgstr "经常问的问题 <small>和答案</small>"
@@ -220,7 +260,9 @@ msgstr "技术提供"
 #~ msgid "Share the link online"
 #~ msgstr "共享链接在线"
 
-#~ msgid "Someone who clicks on the link has to solve a captcha before he sees your email address. "
+#~ msgid ""
+#~ "Someone who clicks on the link has to solve a captcha before he sees your "
+#~ "email address. "
 #~ msgstr "点击链接的人不得不解决一个验证码之前他会看到您的电子邮件地址。"
 
 #~ msgid "<a>Try it yourself</a>."
@@ -256,8 +298,12 @@ msgstr "技术提供"
 #~ msgid "Protect your Email Address against Spam"
 #~ msgstr "保护你抗击垃圾邮件的电子邮件地址"
 
-#~ msgid "Tired of spam? Spamty helps you to protect your email address on the web by asking people to solve a captcha before they see it."
-#~ msgstr "厌倦了垃圾邮件？Spamty 可以帮助您保护您的电子邮件地址在网络上通过询问人们解决一个验证码，在他们看到它之前。"
+#~ msgid ""
+#~ "Tired of spam? Spamty helps you to protect your email address on the web "
+#~ "by asking people to solve a captcha before they see it."
+#~ msgstr ""
+#~ "厌倦了垃圾邮件？Spamty 可以帮助您保护您的电子邮件地址在网络上通过询问人们"
+#~ "解决一个验证码，在他们看到它之前。"
 
 #~ msgid "Home"
 #~ msgstr "网站首页"
@@ -277,17 +323,26 @@ msgstr "技术提供"
 #~ msgid "Protect your Email"
 #~ msgstr "保护您的电子邮件"
 
-#~ msgid "Tired of Spam? With Spamty you can protect your email address to share it on the web."
-#~ msgstr "厌倦了垃圾邮件？使用 Spamty，您可以保护您的电子邮件地址，在网络上分享。"
+#~ msgid ""
+#~ "Tired of Spam? With Spamty you can protect your email address to share it "
+#~ "on the web."
+#~ msgstr ""
+#~ "厌倦了垃圾邮件？使用 Spamty，您可以保护您的电子邮件地址，在网络上分享。"
 
-#~ msgid "Enter your email address below and we will encrypt it and give you a link. If somebody opens the link he has to solve a captcha and then he is able to see your email address."
-#~ msgstr "输入您的电子邮件地址，我们将对它进行加密，并给你一个链接。如果有人打开链接便要解决一个验证码，然后他才能够看到您的电子邮件地址。"
+#~ msgid ""
+#~ "Enter your email address below and we will encrypt it and give you a "
+#~ "link. If somebody opens the link he has to solve a captcha and then he is "
+#~ "able to see your email address."
+#~ msgstr ""
+#~ "输入您的电子邮件地址，我们将对它进行加密，并给你一个链接。如果有人打开链接"
+#~ "便要解决一个验证码，然后他才能够看到您的电子邮件地址。"
 
 #~ msgid "https://creativecommons.org/licenses/by/2.0/"
 #~ msgstr "https://creativecommons.org/licenses/by/2.0/deed.zh"
 
 # Safe Harbour Info Link
-#~ msgid "https://en.wikipedia.org/wiki/International_Safe_Harbor_Privacy_Principles"
+#~ msgid ""
+#~ "https://en.wikipedia.org/wiki/International_Safe_Harbor_Privacy_Principles"
 #~ msgstr "https://zh.wikipedia.org/wiki/安全港原則"
 
 #~ msgid "Captcha"
@@ -296,8 +351,12 @@ msgstr "技术提供"
 #~ msgid "A support ticket was successfully created. Thanks."
 #~ msgstr "Ein Support-Ticket wurde erfolgreich erstellt. Danke."
 
-#~ msgid "This website uses cookies to ensure you get the best experience on our website"
-#~ msgstr "Wir verwenden Cookies, um sicherzustellen, dass wir Ihnen das beste Erlebnis auf unserer Website bieten können"
+#~ msgid ""
+#~ "This website uses cookies to ensure you get the best experience on our "
+#~ "website"
+#~ msgstr ""
+#~ "Wir verwenden Cookies, um sicherzustellen, dass wir Ihnen das beste "
+#~ "Erlebnis auf unserer Website bieten können"
 
 #~ msgid "Got it!"
 #~ msgstr "OK!"
@@ -305,31 +364,51 @@ msgstr "技术提供"
 #~ msgid "More info"
 #~ msgstr "Weitere Infos"
 
-#~ msgid "This is the legal notice according to &sect; 5 TMG (german teleservices act) for the folloiwng websites:"
-#~ msgstr "Angaben gemäß &sect; 5 TMG (Telemediengesetz) für folgende Spamty-Websites:"
+#~ msgid ""
+#~ "This is the legal notice according to &sect; 5 TMG (german teleservices "
+#~ "act) for the folloiwng websites:"
+#~ msgstr ""
+#~ "Angaben gemäß &sect; 5 TMG (Telemediengesetz) für folgende Spamty-"
+#~ "Websites:"
 
-#~ msgid "We are using Piwik (a open source software) to analyze the behaviour of the website users. "
-#~ msgstr "Diese Website benutzt Piwik, eine Open-Source-Software zur statistischen Auswertung der Besucherzugriffe. "
+#~ msgid ""
+#~ "We are using Piwik (a open source software) to analyze the behaviour of "
+#~ "the website users. "
+#~ msgstr ""
+#~ "Diese Website benutzt Piwik, eine Open-Source-Software zur statistischen "
+#~ "Auswertung der Besucherzugriffe. "
 
 #~ msgid "Piwik uses Cookies to get statistics about the visitors. "
-#~ msgstr "Piwik verwendet sog. \"Cookies\", die eine Analyse der Benutzung der Website ermöglichen. "
+#~ msgstr ""
+#~ "Piwik verwendet sog. \"Cookies\", die eine Analyse der Benutzung der "
+#~ "Website ermöglichen. "
 
 #~ msgid "This analytics software runs on the same server as this website. "
 #~ msgstr "Die Analysesoftware läuft auf diesem Server in Deutschland. "
 
-#~ msgid "Your IP address is anonymized to store it (192.0.2.72 becomes 192.0.x.x)."
-#~ msgstr "Deine IP-Adresse wird vor deren Verarbeitung und Speicherung anonymisiert (192.0.2.72 wird zu 192.0.x.x)."
+#~ msgid ""
+#~ "Your IP address is anonymized to store it (192.0.2.72 becomes 192.0.x.x)."
+#~ msgstr ""
+#~ "Deine IP-Adresse wird vor deren Verarbeitung und Speicherung anonymisiert "
+#~ "(192.0.2.72 wird zu 192.0.x.x)."
 
 #~ msgid "We won't track you and your browser if you <a>opt out here</a>."
-#~ msgstr "Du kannst deinen Browser <a>hier von der Datenerfassung ausschließen</a>. Dein Besuch wird dann von Piwik nicht mehr erfasst und ausgewertet."
+#~ msgstr ""
+#~ "Du kannst deinen Browser <a>hier von der Datenerfassung ausschließen</a>. "
+#~ "Dein Besuch wird dann von Piwik nicht mehr erfasst und ausgewertet."
 
-#~ msgid "https://trafficstats.de/index.php?module=CoreAdminHome&action=optOut&language=en"
-#~ msgstr "https://trafficstats.de/index.php?module=CoreAdminHome&action=optOut&language=de"
+#~ msgid ""
+#~ "https://trafficstats.de/index.php?"
+#~ "module=CoreAdminHome&action=optOut&language=en"
+#~ msgstr ""
+#~ "https://trafficstats.de/index.php?"
+#~ "module=CoreAdminHome&action=optOut&language=de"
 
 #~ msgid "Piwik Opt-out"
 #~ msgstr "Piwik Opt-Out"
 
-#~ msgid "We are currently only using cookies for our analytics software Piwik."
+#~ msgid ""
+#~ "We are currently only using cookies for our analytics software Piwik."
 #~ msgstr "Aktuell verwenden wir Cookies nur für Piwik."
 
 #~ msgid "You can also <a>open a new support ticket</a>."
@@ -341,8 +420,12 @@ msgstr "技术提供"
 #~ msgid "You can also <a>open a new support ticket</a>. "
 #~ msgstr "Du kannst auch <a>ein Support-Ticket eröffnen</a>. "
 
-#~ msgid "Please try to describe as best as possible what you did to get this error message."
-#~ msgstr "Bitte beschreibe möglichst genau, wie du zu dieser Fehlerseite gekommen bist."
+#~ msgid ""
+#~ "Please try to describe as best as possible what you did to get this error "
+#~ "message."
+#~ msgstr ""
+#~ "Bitte beschreibe möglichst genau, wie du zu dieser Fehlerseite gekommen "
+#~ "bist."
 
 #~ msgid "Your message was successfully sent. Thanks."
 #~ msgstr "Deine Nachricht wurde erfolgreich verschickt. Danke."
@@ -359,11 +442,23 @@ msgstr "技术提供"
 #~ msgid "<a>Contact me</a> if you have any other questions."
 #~ msgstr "<a>Schreibe mir</a>, wenn du irgendwelche anderen Fragen hast."
 
-#~ msgid "Enter your email address in the <a>encryption form</a>. We will encrypt your email address with a random key and then we store the encrypted address in our database."
-#~ msgstr "Gib deine E-Mail Adresse <a>in dieses Formular ein</a>. Wir verschlüsseln deine E-Mail Adresse mit einem zufälligen Schlüssel und speichern diesen Wert in unserer Datenbank."
+#~ msgid ""
+#~ "Enter your email address in the <a>encryption form</a>. We will encrypt "
+#~ "your email address with a random key and then we store the encrypted "
+#~ "address in our database."
+#~ msgstr ""
+#~ "Gib deine E-Mail Adresse <a>in dieses Formular ein</a>. Wir verschlüsseln "
+#~ "deine E-Mail Adresse mit einem zufälligen Schlüssel und speichern diesen "
+#~ "Wert in unserer Datenbank."
 
-#~ msgid "The encryption key which was randomly generated is a part of the link you'll get. We don't store this key or the complete link so we wont be able to encrypt your email address without you."
-#~ msgstr "Der Code zur Verschlüsselung ist Teil des Links, den du bekommst. Wir speichern diesen Schlüssel nicht bei uns und können so deine E-Mail-Adresse auch selbst nicht sehen."
+#~ msgid ""
+#~ "The encryption key which was randomly generated is a part of the link "
+#~ "you'll get. We don't store this key or the complete link so we wont be "
+#~ "able to encrypt your email address without you."
+#~ msgstr ""
+#~ "Der Code zur Verschlüsselung ist Teil des Links, den du bekommst. Wir "
+#~ "speichern diesen Schlüssel nicht bei uns und können so deine E-Mail-"
+#~ "Adresse auch selbst nicht sehen."
 
 #~ msgid "Enter your email address in the form to generate your link"
 #~ msgstr "Gib deine E-Mail Adresse ein"
@@ -374,14 +469,22 @@ msgstr "技术提供"
 #~ msgid "Share the link for example on your blog"
 #~ msgstr "Teile deinen Link zum Beispiel auf deinem Blog"
 
-#~ msgid "Someone who clicks on the link has to solve a captcha before he sees your email address"
-#~ msgstr "Wenn jemand auf diesen Link klickt, muss er ein Captcha lösen bevor er deine E-Mail Adresse sehen kann."
+#~ msgid ""
+#~ "Someone who clicks on the link has to solve a captcha before he sees your "
+#~ "email address"
+#~ msgstr ""
+#~ "Wenn jemand auf diesen Link klickt, muss er ein Captcha lösen bevor er "
+#~ "deine E-Mail Adresse sehen kann."
 
 #~ msgid "Try it yourself with the link shown in the demo:"
 #~ msgstr "Versuche es selbst mit dem Link aus der Demo:"
 
-#~ msgid "You can encrypt the message with my GPG key if you want to send me an email."
-#~ msgstr "Du kannst die Nachricht mit meinem GPG Key verschlüsseln, wenn du mir eine E-Mail schreibst."
+#~ msgid ""
+#~ "You can encrypt the message with my GPG key if you want to send me an "
+#~ "email."
+#~ msgstr ""
+#~ "Du kannst die Nachricht mit meinem GPG Key verschlüsseln, wenn du mir "
+#~ "eine E-Mail schreibst."
 
 #~ msgid "Or use the contact form below. "
 #~ msgstr "Oder benutze das Kontaktformular. "
@@ -410,8 +513,12 @@ msgstr "技术提供"
 #~ msgid "licensed under <a>Creative Commons BY 2.0</a>"
 #~ msgstr "unter der <a>Creative Commons BY 2.0</a> Lizenz"
 
-#~ msgid "The users are liable for everything they do and the content they publish on this websit. "
-#~ msgstr "Außerdem übernehmen wir keine Haftung für, von Benutzern erstellte Inhalte (vor allem Beiträge und Kommentare im Blog)"
+#~ msgid ""
+#~ "The users are liable for everything they do and the content they publish "
+#~ "on this websit. "
+#~ msgstr ""
+#~ "Außerdem übernehmen wir keine Haftung für, von Benutzern erstellte "
+#~ "Inhalte (vor allem Beiträge und Kommentare im Blog)"
 
 #~ msgid "Go to my Email Address"
 #~ msgstr "Zu meiner E-Mail Adresse"

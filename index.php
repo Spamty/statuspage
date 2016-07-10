@@ -85,7 +85,7 @@ textdomain("spamty-status");
         <h3 class="text-muted"><a href="index.php"><img src="//d1r0dd7tzzqtcd.cloudfront.net/img/logo.png" alt="Spamty Logo"></a></h3>
       </div>
 
-<h1><?php echo _("Status"); ?></h1>
+<h1><?php echo _("Status"); ?></h1><hr>
 <p><?php echo _("See uptime and response times of the Spamty.eu website, API and the server."); ?></p>
 <?php
 
@@ -155,6 +155,27 @@ foreach($uptime_data['monitors']['monitor'] as $monitor){
 }
 
 ?>
+
+
+
+
+<h2><?php echo _("Contact Me"); ?></h2><hr>
+
+<p><?php echo _("You can contact me if you have any questions or if there is a problem with the server."); ?></p>
+
+<ul>
+	<li><a href="https://spamty.eu/contact-dev.php"><?php echo _("Go to the contact form"); ?></a></li>
+</ul>
+
+<?php echo _("You can also:"); ?>
+<ul>
+	<li><a href="http://3q3.de/spamty"><?php echo _("Send us an email"); ?></a></li>
+	<li><a href="http://ask.fm/spamty"><?php echo _("Ask anything on ask.fm"); ?></a></li>
+	<li><a href="https://telegram.me/spamty_bot"><?php echo _("Message us on Telegram"); ?></a></li>
+</ul>
+
+
+
 <div class="footer">
  <p>
 	<a href="https://blog.spamty.eu/"><?php echo _("Blog"); ?></a> | 
