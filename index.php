@@ -225,7 +225,7 @@ foreach($uptime_data['monitors']['monitor'] as $monitor){
 	<a onclick="setLangCookie('de')" href="https://status.spamty.eu/de/index.php" title="Deutsch"><i class="famfamfam-flag-de"><span class="famfamfam-desc">Deutsch<span></i></a>
 	<a onclick="setLangCookie('es')" href="https://status.spamty.eu/es/index.php" title="Español"><i class="famfamfam-flag-es"><span class="famfamfam-desc">Español<span></i></a>
 	<a onclick="setLangCookie('fr')" href="https://status.spamty.eu/fr/index.php" title="Fran&ccedil;ais"><i class="famfamfam-flag-fr"><span class="famfamfam-desc">Fran&ccedil;ais<span></i></a>
-	<a onclick="setLangCookie('cn')" href="https://status.spamty.eu/zh/index.php" title="中文"><i class="famfamfam-flag-cn"><span class="famfamfam-desc">中文<span></i></a>
+	<a onclick="setLangCookie('zh')" href="https://status.spamty.eu/zh/index.php" title="中文"><i class="famfamfam-flag-cn"><span class="famfamfam-desc">中文<span></i></a>
 	</p>
 	<script>
 	// set cookie
