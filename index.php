@@ -25,6 +25,13 @@ bindtextdomain("spamty-status", "./translate");
 bind_textdomain_codeset("spamty-status", 'UTF-8');
 textdomain("spamty-status");
 
+
+if(strtolower($_GET['lang']) == "en" || empty($_GET['lang'])){
+	$lang_url = "";
+}else{
+	$lang_url = strtolower($_GET['lang'])."/";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $_GET['lang']; ?>">
@@ -69,8 +76,8 @@ textdomain("spamty-status");
 	<meta property="og:description" content="<?php echo _("See uptime and response times of the Spamty.eu website, API and the server."); ?>" />
 	<meta name="twitter:description" content="<?php echo _("See uptime and response times of the Spamty.eu website, API and the server."); ?>" />
 	
-	<link rel="canonical" href="https://status.spamty.eu/<?php echo $_GET['lang']; ?>/index.php" />
-	<meta property="og:url" content="https://status.spamty.eu/<?php echo $_GET['lang']; ?>/index.php" />
+	<link rel="canonical" href="https://status.spamty.eu/<?php echo $lang_url; ?>index.php" />
+	<meta property="og:url" content="https://status.spamty.eu/<?php echo $lang_url; ?>index.php" />
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="//d1r0dd7tzzqtcd.cloudfront.net/js/ajaxform-tab.min.js"></script>
@@ -80,10 +87,35 @@ textdomain("spamty-status");
 
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><a href="https://spamty.eu/">Spamty.eu</a></li>
+          <li><a href="https://spamty.eu/<?php echo $lang_url; ?>">Spamty.eu</a></li>
         </ul>
         <h3 class="text-muted"><a href="index.php"><img src="//d1r0dd7tzzqtcd.cloudfront.net/img/logo.png" alt="Spamty Logo"></a></h3>
       </div>
+
+
+
+<?php if($_GET['lang'] == "fr"){ ?>
+	<div class="alert alert-warning" role="alert">
+		La traduction en fran&#231;ais n'est pas encore fini. <a href="https://status.spamty.eu/index.php" class="alert-link">Visite la site en anglais</a>.<br>
+		S'il vous plaît <a href="https://spamty.eu/fr/contact.php" class="alert-link">me contacter</a> si vous trouvez des erreurs.
+	</div>
+<?php } 
+elseif($_GET['lang'] == "es"){ ?>
+	<div class="alert alert-warning" role="alert">
+		La traducción al español aún no está terminada. <a href="https://status.spamty.eu/index.php" class="alert-link">Visite el sitio web de Inglés</a>.<br>
+		Póngase <a href="https://spamty.eu/es/contact.php" class="alert-link">en contacto conmigo</a> si encuentra errores.
+	</div>
+<?php }
+elseif($_GET['lang'] == "zh"){ ?>
+	<div class="alert alert-warning" role="alert">
+		这一转换是尚未完成。<a href="https://status.spamty.eu/index.php" class="alert-link">请参阅本网站英文版</a>。<br>
+		This translation is not finished yet. <a href="https://status.spamty.eu/index.php" class="alert-link">See this website in English</a>.<br>
+		<a href="https://spamty.eu/zh/contact.php" class="alert-link">与我联系，汇报错误</a>。<br>
+		<a href="https://spamty.eu/zh/contact.php" class="alert-link">Contact me to report mistakes</a>.
+	</div>
+<?php } ?>
+
+
 
 <h1><?php echo _("Status"); ?></h1><hr>
 <p><?php echo _("See uptime and response times of the Spamty.eu website, API and the server."); ?></p>
@@ -164,7 +196,7 @@ foreach($uptime_data['monitors']['monitor'] as $monitor){
 <p><?php echo _("You can contact me if you have any questions or if there is a problem with the server."); ?></p>
 
 <ul>
-	<li><a href="https://spamty.eu/contact-dev.php"><?php echo _("Go to the contact form"); ?></a></li>
+	<li><a href="https://spamty.eu/<?php echo $lang_url; ?>contact-dev.php"><?php echo _("Go to the contact form"); ?></a></li>
 </ul>
 
 <?php echo _("You can also:"); ?>
@@ -179,10 +211,10 @@ foreach($uptime_data['monitors']['monitor'] as $monitor){
 <div class="footer">
  <p>
 	<a href="https://blog.spamty.eu/"><?php echo _("Blog"); ?></a> | 
-	<a href="https://spamty.eu/contact.php"><?php echo _("Contact"); ?></a> | 
-	<a href="https://spamty.eu/faq.php"><?php echo _("FAQ/Help"); ?></a> | 
-	<a href="https://spamty.eu/legal.php"><?php echo _("Legal Notice"); ?></a> | 
-	<a href="https://spamty.eu/privacy.php"><?php echo _("Privacy Policy"); ?></a> | 
+	<a href="https://spamty.eu/<?php echo $lang_url; ?>contact.php"><?php echo _("Contact"); ?></a> | 
+	<a href="https://spamty.eu/<?php echo $lang_url; ?>faq.php"><?php echo _("FAQ/Help"); ?></a> | 
+	<a href="https://spamty.eu/<?php echo $lang_url; ?>legal.php"><?php echo _("Legal Notice"); ?></a> | 
+	<a href="https://spamty.eu/<?php echo $lang_url; ?>privacy.php"><?php echo _("Privacy Policy"); ?></a> | 
 	<a href="https://dev.spamty.eu/"><?php echo _("Developer"); ?></a>
  </p>
 
