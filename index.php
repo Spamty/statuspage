@@ -7,14 +7,8 @@ switch ($_GET['lang']){
 	case "es":
 		$lcAll = "es_ES";
 		break;
-	case "ej":
-		$lcAll = "en_IN";
-		break;
 	case "fr":
 		$lcAll = "fr_FR";
-		break;
-	case "up":
-		$lcAll = "en_NG";
 		break;
 	case "zh":
 		$lcAll = "zh_CN";
@@ -68,15 +62,20 @@ function _l ( $text, $url, $attributes ){
 	
 	<!-- language SEO -->
 	<meta property="og:locale" content="<?php echo $_GET['lang']; ?>" />
+	<link href="https://status.spamty.eu/index.php" rel="alternate" hreflang="en" />
+	<link href="https://status.spamty.eu/de/index.php" rel="alternate" hreflang="de" />
+	<link href="https://status.spamty.eu/es/index.php" rel="alternate" hreflang="es" />
+	<link href="https://status.spamty.eu/fr/index.php" rel="alternate" hreflang="fr" />
+	<link href="https://status.spamty.eu/cn/index.php" rel="alternate" hreflang="zh" />
 
 	<!-- custom SEO -->
-	<title>Spamty Server Status</title>
-	<meta property="og:title" content="Spamty Server Status" />
-	<meta name="twitter:title" content="Spamty Server Status" />
+	<title><?php echo _("Spamty Server Status"); ?></title>
+	<meta property="og:title" content="<?php echo _("Spamty Server Status"); ?>" />
+	<meta name="twitter:title" content="<?php echo _("Spamty Server Status"); ?>" />
 	
-	<meta name="description" content="See uptime and response times of the Spamty.eu website, API and the server" />
-	<meta property="og:description" content="See uptime and response times of the Spamty.eu website, API and the server" />
-	<meta name="twitter:description" content="See uptime and response times of the Spamty.eu website, API and the server" />
+	<meta name="description" content="<?php echo _("See uptime and response times of the Spamty.eu website, API and the server."); ?>" />
+	<meta property="og:description" content="<?php echo _("See uptime and response times of the Spamty.eu website, API and the server."); ?>" />
+	<meta name="twitter:description" content="<?php echo _("See uptime and response times of the Spamty.eu website, API and the server."); ?>" />
 	
 	<link rel="canonical" href="https://status.spamty.eu/<?php echo $_GET['lang']; ?>/index.php" />
 	<meta property="og:url" content="https://status.spamty.eu/<?php echo $_GET['lang']; ?>/index.php" />
@@ -94,8 +93,8 @@ function _l ( $text, $url, $attributes ){
         <h3 class="text-muted"><a href="index.php"><img src="//d1r0dd7tzzqtcd.cloudfront.net/img/logo.png" alt="Spamty Logo"></a></h3>
       </div>
 
-<h1>Status</h1>
-<p>See uptime and response times of the Spamty.eu website, API and the server.</p>
+<h1><?php echo _("Status"); ?></h1>
+<p><?php echo _("See uptime and response times of the Spamty.eu website, API and the server."); ?></p>
 <?php
 
 
@@ -118,45 +117,45 @@ foreach($uptime_data['monitors']['monitor'] as $monitor){
 		// paused
 	    case "0":
 	    	$emoji = "⏸";
-	    	$statusText = "Paused";
+	    	$statusText = _("Paused");
 	        break;
 		// not checked yet
 	    case "1":
 	    	$emoji = "🔄";
-	    	$statusText = "Not checked yet";
+	    	$statusText = _("Not checked yet");
 	        break;
 		// up
 	    case "2":
 	    	$emoji = "✅";
-	    	$statusText = "Online";
+	    	$statusText = _("Online");
 	        break;
 		// seems down
 	    case "8":
 	    	$emoji = "⭕️";
-	    	$statusText = "Seems down";
+	    	$statusText = _("Seems down");
 	        break;
 		// down
 	    case "9":
 	    	$emoji = "🚫";
-	    	$statusText = "DOWN";
+	    	$statusText = _("DOWN");
 	        break;
 	}
 	echo "<h2>".$emoji." ".$monitor['friendlyname']."</h2>";
 	echo "<p>Status: <b>".$statusText."</b></p>";
 	
-	echo "<h3>Uptime</h3>";
+	echo "<h3>"._("Uptime")."</h3>";
 	?>
 	<div class="progress"><div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $monitor['customuptimeratio']; ?>" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <?php echo $monitor['customuptimeratio']; ?>%;"><?php echo $monitor['customuptimeratio']; ?>%</div></div>
 	<?php
-	echo "<p>Last 30 days: <b>".$monitor['customuptimeratio']."%</b><br>";
-	echo "Alltime: ".$monitor['alltimeuptimeratio']."% </p>";
+	echo "<p>"._("Last 30 days").": <b>".$monitor['customuptimeratio']."%</b><br>";
+	echo _("Alltime").": ".$monitor['alltimeuptimeratio']."% </p>";
 	
 	if( !empty($monitor['responsetime'][0]['value']) ){
-		echo "<h3>Response Time</h3>";
-		echo "<p>Average in last 12 hours: <b>".$monitor['responsetime'][0]['value']." Milliseconds</b>";
+		echo "<h3>"._("Response Time")."</h3>";
+		echo "<p>"._("Average in last 12 hours").": <b>".$monitor['responsetime'][0]['value']." "._("Milliseconds")."</b>";
 		
 		if( !empty($monitor['responsetime'][1]['value']) ){
-			echo "<br>Average previous 12 hours: ".$monitor['responsetime'][1]['value']." Milliseconds";
+			echo "<br>"._("Average previous 12 hours").": ".$monitor['responsetime'][1]['value']." "._("Milliseconds");
 		}
 		echo "</p>";
 	}
@@ -166,12 +165,12 @@ foreach($uptime_data['monitors']['monitor'] as $monitor){
 ?>
 <div class="footer">
  <p>
-	<a href="https://blog.spamty.eu/">Blog</a> | 
-	<a href="https://spamty.eu/contact.php">Contact</a> | 
-	<a href="https://spamty.eu/faq.php">FAQ/Help</a> | 
-	<a href="https://spamty.eu/legal.php">Legal Notice</a> | 
-	<a href="https://spamty.eu/privacy.php">Privacy Policy</a> | 
-	<a href="https://dev.spamty.eu/">Developer</a>
+	<a href="https://blog.spamty.eu/"><?php echo _("Blog"); ?></a> | 
+	<a href="https://spamty.eu/contact.php"><?php echo _("Contact"); ?></a> | 
+	<a href="https://spamty.eu/faq.php"><?php echo _("FAQ/Help"); ?></a> | 
+	<a href="https://spamty.eu/legal.php"><?php echo _("Legal Notice"); ?></a> | 
+	<a href="https://spamty.eu/privacy.php"><?php echo _("Privacy Policy"); ?></a> | 
+	<a href="https://dev.spamty.eu/"><?php echo _("Developer"); ?></a>
  </p>
 
 
@@ -199,7 +198,7 @@ foreach($uptime_data['monitors']['monitor'] as $monitor){
 	</script>
 
 
-<p class="text-center">Powered by <a href="https://uptimerobot.com/" target="_blank">Uptime Robot</a>.</p>
+<p class="text-center"><?php echo _("Powered by"); ?> <a href="https://uptimerobot.com/" target="_blank">Uptime Robot</a>.</p>
 
 </div>
 </div><!-- /container -->
