@@ -1,0 +1,28 @@
+# No directory browsing
+# Returns Error 500 on new Server
+# Options -Indexes
+
+# URL Rewrite rules
+	RewriteEngine on
+	RewriteBase /
+
+
+# Translation
+# https://spamty.eu/CC/FILE.php		with CC = de es fr
+# [QSA] is to keep other Get parameters (see http://y.8qq.de/7)
+	RewriteRule ^de/(.+).php$ $1.php?lang=de [QSA,L]
+	RewriteRule ^es/(.+).php$ $1.php?lang=es [QSA,L]
+	RewriteRule ^ej/(.+).php$ $1.php?lang=ej [QSA,L]
+	RewriteRule ^fr/(.+).php$ $1.php?lang=fr [QSA,L]
+	RewriteRule ^up/(.+).php$ $1.php?lang=up [QSA,L]
+	RewriteRule ^zh/(.+).php$ $1.php?lang=zh [QSA,L]
+# Same to work for https://spamty.eu/CC/ which is index.php
+	RewriteRule ^de/$ index.php?lang=de [QSA,L]
+	RewriteRule ^es/$ index.php?lang=es [QSA,L]
+	RewriteRule ^ej/$ index.php?lang=ej [QSA,L]
+	RewriteRule ^fr/$ index.php?lang=fr [QSA,L]
+	RewriteRule ^up/$ index.php?lang=up [QSA,L]
+	RewriteRule ^zh/$ index.php?lang=zh [QSA,L]
+# redirect /en/FILE.php to FILE.php
+	RewriteRule ^en/(.+).php$ /$1.php [R=301,L]
+	RewriteRule ^en/$ /index.php [R=301,L]

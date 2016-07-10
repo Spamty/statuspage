@@ -1,10 +1,53 @@
+<?php
+// choose correct translation file
+switch ($_GET['lang']){
+	case "de":
+		$lcAll = "de_DE";
+		break;
+	case "es":
+		$lcAll = "es_ES";
+		break;
+	case "ej":
+		$lcAll = "en_IN";
+		break;
+	case "fr":
+		$lcAll = "fr_FR";
+		break;
+	case "up":
+		$lcAll = "en_NG";
+		break;
+	case "zh":
+		$lcAll = "zh_CN";
+		break;
+	default:
+		$_GET['lang'] = "en";
+		$lcAll = "en_US";
+}
+
+// translation settings
+putenv('LC_ALL='.$lcAll);
+setlocale(LC_ALL, $lcAll);
+bindtextdomain("spamty", "./translate");
+bind_textdomain_codeset("spamty", 'UTF-8');
+textdomain("spamty");
+
+// link translation
+function _l ( $text, $url, $attributes ){
+	// this is a function to translate a text with link
+	// Example usage: echo _l( _('text <a>with link</a>'), 'http://example.com', 'title="'._('example link').'"' );
+	$newText = preg_replace('#<a>(.*?)</a>#', '<a href="'.$url.'" '.$attributes.'>$1</a>', $text);
+	return $newText; 
+}
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $_GET['lang']; ?>">
   <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link href="//cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/cosmo/bootstrap.min.css" rel="stylesheet" />
 	<link href="//d1r0dd7tzzqtcd.cloudfront.net/css/spamty.css" rel="stylesheet" />
+	<link href="//d1r0dd7tzzqtcd.cloudfront.net/css/flags.css" rel="stylesheet" />
 
 	<!-- Icons -->
 	<link rel="apple-touch-icon" sizes="76x76"   href="//d1r0dd7tzzqtcd.cloudfront.net/img/touch-icon-76.png"  />
@@ -24,7 +67,7 @@
 	<meta name="keywords" content="status page, API status, website status, server, uptime, response time" />
 	
 	<!-- language SEO -->
-	<meta property="og:locale" content="en" />
+	<meta property="og:locale" content="<?php echo $_GET['lang']; ?>" />
 
 	<!-- custom SEO -->
 	<title>Spamty Server Status</title>
@@ -35,8 +78,8 @@
 	<meta property="og:description" content="See uptime and response times of the Spamty.eu website, API and the server" />
 	<meta name="twitter:description" content="See uptime and response times of the Spamty.eu website, API and the server" />
 	
-	<link rel="canonical" href="https://status.spamty.eu/" />
-	<meta property="og:url" content="https://status.spamty.eu/" />
+	<link rel="canonical" href="https://status.spamty.eu/<?php echo $_GET['lang']; ?>/index.php" />
+	<meta property="og:url" content="https://status.spamty.eu/<?php echo $_GET['lang']; ?>/index.php" />
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="//d1r0dd7tzzqtcd.cloudfront.net/js/ajaxform-tab.min.js"></script>
@@ -130,6 +173,31 @@ foreach($uptime_data['monitors']['monitor'] as $monitor){
 	<a href="https://spamty.eu/privacy.php">Privacy Policy</a> | 
 	<a href="https://dev.spamty.eu/">Developer</a>
  </p>
+
+
+
+	<p><?php echo _("Language:"); ?>
+	<a onclick="setLangCookie('en')" href="https://status.spamty.eu/index.php" title="English"><i class="famfamfam-flag-gb"><span class="famfamfam-desc">British English<span></i> <i class="famfamfam-flag-us"><span class="famfamfam-desc">American English<span></i></a>
+	<a onclick="setLangCookie('de')" href="https://status.spamty.eu/de/index.php" title="Deutsch"><i class="famfamfam-flag-de"><span class="famfamfam-desc">Deutsch<span></i></a>
+	<a onclick="setLangCookie('es')" href="https://status.spamty.eu/es/index.php" title="Español"><i class="famfamfam-flag-es"><span class="famfamfam-desc">Español<span></i></a>
+	<a onclick="setLangCookie('fr')" href="https://status.spamty.eu/fr/index.php" title="Fran&ccedil;ais"><i class="famfamfam-flag-fr"><span class="famfamfam-desc">Fran&ccedil;ais<span></i></a>
+	<a onclick="setLangCookie('cn')" href="https://status.spamty.eu/zh/index.php" title="中文"><i class="famfamfam-flag-cn"><span class="famfamfam-desc">中文<span></i></a>
+	</p>
+	<script>
+	// set cookie
+	function setLangCookie( lang ){
+	    var d = new Date();
+	    d.setTime(d.getTime() + (30*24*60*60*1000)); // in 30 days
+	    var expires = d.toUTCString();
+		document.cookie="lang="+lang+"; expires="+expires+"; path=/";
+	}
+
+	// if language cookie not exists
+	if (!(document.cookie.indexOf("lang") >= 0)) {
+	  setLangCookie("<?php echo $_GET['lang']; ?>");
+	}
+	</script>
+
 
 <p class="text-center">Powered by <a href="https://uptimerobot.com/" target="_blank">Uptime Robot</a>.</p>
 
