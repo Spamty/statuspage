@@ -21,17 +21,9 @@ switch ($_GET['lang']){
 // translation settings
 putenv('LC_ALL='.$lcAll);
 setlocale(LC_ALL, $lcAll);
-bindtextdomain("spamty", "./translate");
-bind_textdomain_codeset("spamty", 'UTF-8');
-textdomain("spamty");
-
-// link translation
-function _l ( $text, $url, $attributes ){
-	// this is a function to translate a text with link
-	// Example usage: echo _l( _('text <a>with link</a>'), 'http://example.com', 'title="'._('example link').'"' );
-	$newText = preg_replace('#<a>(.*?)</a>#', '<a href="'.$url.'" '.$attributes.'>$1</a>', $text);
-	return $newText; 
-}
+bindtextdomain("spamty-status", "./translate");
+bind_textdomain_codeset("spamty-status", 'UTF-8');
+textdomain("spamty-status");
 
 ?>
 <!DOCTYPE html>
