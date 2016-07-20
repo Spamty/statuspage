@@ -1,4 +1,10 @@
 <?php
+// verify request from Uptime robot
+if($_GET['verify'] != "c5eac121edc0a047fb13"){
+	die("verification failed. ");
+}
+
+
 /* Twitter API tutorial: https://goo.gl/N2Znbb */
 
 // include twitteroauth
@@ -20,56 +26,37 @@ echo "connect to twitter. ";
 //var_dump($content);
 
 
- 
-// get previous status from json file
-$prev_status = json_decode(file_get_contents("twitter_previous.json"), true);
-echo "read statuses. ";
-//var_dump($prev_status);
+
+// Data from Uptime Robot web-hook:
+//   *monitorID* (the ID of the monitor)
+//   *monitorURL* (the URL of the monitor)
+//   *monitorFriendlyName* (the friendly name of the monitor)
+//   *alertType* (1 is down, 2 is up)
+//   *alertDetails* (any info regarding the alert -if exists-)
+//   *monitorAlertContacts* (the alert contacts associated with the alert in the format of 457;2;john@doe.com -alertContactID;alertContactType, alertContactValue)
 
 
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://api.uptimerobot.com/getMonitors?apiKey=u287454-395b58ff8c08619f09e26150&monitors=777357002-777356996-777357000&customUptimeRatio=30&format=json");
-curl_setopt($ch, CURLOPT_HEADER, 0);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$response = curl_exec($ch);
-curl_close($ch);
-
-$response = str_replace("jsonUptimeRobotApi(", "", $response);
-$response = substr($response, 0, -1);
-
-$uptime_data = json_decode($response, true);
-echo "get server status. ";
-
-
-foreach($uptime_data['monitors']['monitor'] as $monitor){
-	//print_r($monitor);
-	// status is DOWN previous was UP
-	if($monitor['status'] == "9" && $prev_status[$monitor['id']] == "2"){
-		$twitter_status = $connection->post(
-		    "statuses/update", [
-		        "status" => "Ohhh ❌ ".$monitor['friendlyname']." is down. We are working on a fix. Uptime of ".$monitor['friendlyname']." was ".$monitor['alltimeuptimeratio']."%. For more see: https://status.spamty.eu/"
-		    ]
-		);
-		//var_dump($twitter_status);
-		echo $monitor['friendlyname']." is DOWN was UP. Posted to twitter. ";
-	}
-	// status is UP previous was DOWN
-	elseif($monitor['status'] == "2" && $prev_status[$monitor['id']] == "9"){
-		$twitter_status = $connection->post(
-		    "statuses/update", [
-		        "status" => $monitor['friendlyname']." 🎉 is up and running again. Uptime in last 30 days was ".$monitor['customuptimeratio']."%. For more information check out: https://status.spamty.eu/"
-		    ]
-		);
-		//var_dump($twitter_status);
-		echo $monitor['friendlyname']." is UP was DOWN. Posted to twitter. ";
-	}
-	// set status in json
-	$prev_status[$monitor['id']] = $monitor['status'];
+// status is DOWN (previous was UP)
+if($_GET['alertType'] == "1"){
+	$twitter_status = $connection->post(
+	    "statuses/update", [
+	        "status" => "Ohhh ❌ ".$_GET['monitorFriendlyName']." is down. We are working on a fix. For more see: https://status.spamty.eu/"
+	    ]
+	);
+	//var_dump($twitter_status);
+	echo $_GET['monitorFriendlyName']." is DOWN. Posted to twitter. ";
+}
+// status is UP (previous was DOWN)
+elseif($_GET['alertType'] == "2"){
+	$twitter_status = $connection->post(
+	    "statuses/update", [
+	        "status" => $_GET['monitorFriendlyName']." 🎉 is up and running again. For more information check out: https://status.spamty.eu/"
+	    ]
+	);
+	//var_dump($twitter_status);
+	echo $monitor['friendlyname']." is UP. Posted to twitter. ";
 }
 
 
 
-// write status in json file
-file_put_contents("twitter_previous.json", json_encode($prev_status));
-echo "write in json. ";
