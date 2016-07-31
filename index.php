@@ -121,10 +121,17 @@ elseif($_GET['lang'] == "zh"){ ?>
 <p><?php echo _("See uptime and response times of the Spamty.eu website, API and the server."); ?></p>
 <?php
 
+$monitor_keys = array(
+	"m777357002-1cfe8b61308dcabad91c5bb3", // API
+	"m777356996-3bb21e17887a1758264465d2", // website
+	"m777952468-0fa4e19b03ef02a223e06a5f", // Server
+	"m777357000-265c2deafc07df5697f5c950", // 3q3
+);
+foreach($monitor_keys as $monitor_key){
 
 
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "https://api.uptimerobot.com/getMonitors?apiKey=u287454-395b58ff8c08619f09e26150&monitors=777952468-777357002-777356996-777357000&customUptimeRatio=30&responseTimes=1&responseTimesLimit=24&responseTimesAverage=720&format=json");
+curl_setopt($ch, CURLOPT_URL, "https://api.uptimerobot.com/getMonitors?apiKey=".$monitor_key."&customUptimeRatio=30&responseTimes=1&responseTimesLimit=24&responseTimesAverage=720&format=json");
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $response = curl_exec($ch);
@@ -186,6 +193,8 @@ foreach($uptime_data['monitors']['monitor'] as $monitor){
 
 }
 
+
+}
 ?>
 
 
