@@ -11,7 +11,9 @@ The website is translated. Docs can be found here <https://github.com/Spamty/sta
 
 ## License
 
-Copyright (C) 2016 by [Spamty team](https://github.com/Spamty).
+Copyright (c) 2016 by 
+[Spamty team](https://github.com/Spamty) &
+[contributors](https://github.com/Spamty/statuspage/graphs/contributors)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
