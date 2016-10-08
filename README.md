@@ -1,5 +1,10 @@
 # Spamty Statuspage
 
+[![Open Issues](https://img.shields.io/github/issues/spamty/statuspage.svg)](https://github.com/Spamty/statuspage/issues)
+
+[![License](https://img.shields.io/badge/license-GNU_GPL-blue.png)](https://github.com/Spamty/statuspage/blob/master/LICENSE.md)
+![Twitter](https://img.shields.io/twitter/follow/Spamty.svg?style=social&label=Follow&maxAge=2592000)
+
 Powered by Uptime Robot API
 
 ## Website
