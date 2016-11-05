@@ -1,5 +1,6 @@
 # Spamty Statuspage
 
+[![Build Status](https://travis-ci.org/Spamty/statuspage.svg?branch=master)](https://travis-ci.org/Spamty/statuspage)
 [![Open Issues](https://img.shields.io/github/issues/spamty/statuspage.svg)](https://github.com/Spamty/statuspage/issues)
 
 [![License](https://img.shields.io/badge/license-GNU_GPL-blue.png)](https://github.com/Spamty/statuspage/blob/master/LICENSE.md)
