@@ -1,9 +1,14 @@
-script: htmlproofer .index.php
+language: ruby
+rvm:
+- 2.3.1
 
-# branch whitelist, only for GitHub Pages
+install: gem install html-proofer
+script: htmlproofer ./index.php
+
+# branch whitelist
 branches:
   only:
-  - master 
+  - master
 
 env:
   global:
