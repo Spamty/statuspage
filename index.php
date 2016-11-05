@@ -211,8 +211,6 @@ foreach($uptime_data['monitors']['monitor'] as $monitor){
 <?php echo _("You can also:"); ?>
 <ul>
 	<li><a href="http://3q3.de/spamty"><?php echo _("Send us an email"); ?></a></li>
-	<li><a href="http://ask.fm/spamty"><?php echo _("Ask anything on ask.fm"); ?></a></li>
-	<li><a href="https://telegram.me/spamty_bot"><?php echo _("Message us on Telegram"); ?></a></li>
 </ul>
 
 
